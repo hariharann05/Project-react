@@ -1,0 +1,871 @@
+.App {
+  text-align: center;
+}
+
+.whole-div {
+  background-image: url('/src/img4.jpg'); /* Make sure this path is correct */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative; /* For overlay positioning */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better contrast */
+  z-index: 0; /* Behind content */
+}
+
+.content {
+  position: relative; /* Make sure content appears above the overlay */
+  z-index: 1; /* Above the overlay */
+  text-align: center; /* Center align the text */
+  color: white; /* Text color */
+  
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Space between items */
+  align-items: center;
+  padding: 15px 30px;
+  background-color: rgba(29, 29, 129, 0.9); /* Semi-transparent dark blue */
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px; /* Shadow for depth */
+}
+
+.navbar h2 {
+  color: white; /* Navbar title color */
+}
+
+.navbar-0 {
+  display: flex;
+  column-gap: 25px;
+}
+
+.navbar-2 {
+  background-color: white; /* Button color */
+  border: none;
+  border-radius: 10px;
+  color: rgb(29, 29, 129); /* Button text color */
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-2:hover {
+  background-color: rgb(74, 139, 196); /* Light blue on hover */
+  color: white; /* Text color on hover */
+}
+
+.navbar-3 {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-3:hover {
+  background-color: rgb(74, 139, 196); /* Light blue on hover */
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  color: white; /* Adjust text color */
+}
+
+.display-0 {
+  color: rgb(74, 139, 196); /* Highlight color for the subtitle */
+}
+
+.display-0 h5 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.display h3 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.display p {
+  font-size: 18px;
+  max-width: 600px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 7.5);
+  color: grey;
+}
+
+.story-image {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+.contact-form {
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.8), rgba(240, 248, 255, 0.9));
+  border-radius: 15px;
+  padding: 30px;
+  margin: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  color: #333;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form h2 {
+  color: #2e3a59;
+  margin-bottom: 25px;
+  font-family: 'Roboto', sans-serif; /* Stylish font */
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+}
+
+.contact-form input,
+.contact-form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #2e3a59;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
+  outline: none;
+}
+
+.contact-form button {
+  background: linear-gradient(to right, #2e3a59, #4a90e2);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: linear-gradient(to right, #4a90e2, #2e3a59);
+  transform: scale(1.05);
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(240, 248, 255, 0.9));
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+  display: flex; /* Flexbox layout */
+  justify-content: space-between; /* Space between contact info and buttons */
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.contact-list li:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+.contact-info {
+  flex-grow: 1; /* Take up the remaining space */
+  font-size: 16px;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 10px; /* Space between the buttons */
+}
+
+.contact-list button {
+  background: linear-gradient(to right, #2e3a59, #4a90e2);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-list button:hover {
+  background: linear-gradient(to right, #4a90e2, #2e3a59);
+  transform: scale(1.05);
+}
+
+
+/* Services Section */
+.services {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
+
+.services h5 {
+  font-size: 28px;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.service-1 strong {
+  font-size: 18px;
+  color: black;
+  margin-bottom: 30px;
+  display: block;
+}
+
+.service-boxes {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Individual Service Boxes with Different Background Colors */
+.service-box {
+  width: 30%;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Different Background Colors for Each Service Box */
+.service-box:nth-child(1) {
+  background-color: rgb(96, 203, 96); /* Coral for Graphic Design */
+  color: black;
+}
+
+.service-box:nth-child(2) {
+  background-color: #78afdd; /* Steel Blue for Web Development */
+  color: black;
+}
+
+.service-box:nth-child(3) {
+  background-color:rgb(238, 130, 62) ; /* Lime Green for Content Writing */
+  color: black;
+}
+
+.service-box h3 {
+  margin-top: 15px;
+  font-size: 24px;
+}
+
+.service-box p {
+  font-size: 16px;
+  margin: 10px 0;
+  color: black;
+}
+
+/* Button Styles */
+.learn-more {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.learn-more:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: inherit;
+}
+
+.testimonial {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  margin: 30px 0;
+  padding: 20px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(240, 248, 255, 0.9)); /* Soft gradient background */
+  border-radius: 15px; /* Increased border radius for a smoother look */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.testimonial:hover {
+  transform: translateY(-10px); /* Hover lift effect */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+}
+
+.user-photo {
+  border-radius: 50%; /* Circular photo */
+  width: 120px; /* Increased width */
+  height: 120px; /* Matching height */
+  margin-right: 20px; /* Space between image and text */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow around the image */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.user-photo:hover {
+  transform: scale(1.1); /* Enlarge image slightly on hover */
+}
+
+.testimonial-content {
+  text-align: left; /* Align text to the left */
+  color: #333; /* Dark text color */
+}
+
+.testimonial-content h4 {
+  margin: 0 0 15px; /* Increased margin below the heading */
+  font-size: 20px; /* Slightly larger heading size */
+  font-weight: bold; /* Bold heading */
+  color: #2C3E50; /* Darker text color for contrast */
+}
+
+.star-rating {
+  width: 120px; /* Increased width */
+  height: auto; /* Keep aspect ratio */
+  margin-bottom: 15px; /* Extra space below the stars */
+}
+
+.testimonial-content p {
+  font-size: 17px; /* Slightly larger font size for readability */
+  line-height: 1.8; /* Increased line height for better spacing */
+  margin: 8px 0; /* Increased margin for paragraphs */
+  color: #555; /* Softer color for the testimonial text */
+}
+
+.testimonial-content p:first-of-type {
+  font-style: italic; /* Italicize the testimonial for emphasis */
+  color: #000; /* Black text color */
+}
+
+.testimonial-content strong {
+  font-size: 15px; /* Slightly larger size for the client's name */
+  color: #2980B9; /* A more vibrant color for the client's name */
+}
+
+.testimonial-content strong:hover {
+  text-decoration: underline; /* Underline on hover for emphasis */
+}
+
+/* Stories Section */
+.story {
+  background: linear-gradient(135deg, rgba(42, 103, 157, 0.95), rgba(240, 248, 255, 0.95)); /* Gradient background */
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  margin: 40px 0;
+  color: #ffffff; /* Text color for better contrast */
+}
+
+/* Title Section */
+.story-0 h5 {
+  font-size: 28px;
+  text-align: center;
+  color: #f0e68c; /* Khaki color for a modern touch */
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Subtitle Section */
+.story-1 h1 {
+  font-size: 36px;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 600;
+  margin: 20px 0 40px 0;
+  letter-spacing: 1.5px;
+}
+
+/* Testimonial Section */
+.story-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin: 30px 0;
+}
+
+.testimo {
+  display: flex;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.15); /* More transparency for a sleek effect */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 85%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(8px); /* Blurred glass effect */
+}
+
+.testimo:hover {
+  transform: scale(1.05); /* Subtle scaling on hover */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.user-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 25px;
+  border: 3px solid #ffffff; /* White border for contrast */
+  object-fit: cover; /* Ensure consistent size */
+}
+
+.star-rating {
+  width: 120px;
+  height: auto;
+  margin: 10px 0;
+}
+
+.testimonial-content {
+  max-width: 600px;
+  color: #f0f8ff; /* Lighter text color */
+}
+
+.testimonial-content p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #f8f8ff;
+}
+
+/* Customers Section */
+.customers {
+  display: flex;
+   /* Dark background for contrast */
+   /* Rounded corners for a modern look */
+  /* Slight shadow for depth */
+}
+.customers div:hover p {
+  color: #ffffff; /* Change text color to white on hover */
+}
+.customers div {
+  background-color: #ffffff; /* Bright card background for contrast against dark container */
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+  margin: 0 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.customers div:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  background-color: black;
+}
+
+.customers h2 {
+  font-size: 40px;
+  color: #FF6B6B; /* Bright coral color for contrast */
+}
+
+.customers p {
+  font-size: 18px;
+  color: #161212; /* Lighter text color for readability */
+  margin-top: 10px;
+}
+
+.customers-0 h2 {
+  color: #FFD93D; /* Bright yellow for emphasis */
+}
+
+.customers-1 h2 {
+  color: #1ABC9C; /* Bright turquoise for emphasis */
+}
+
+.customers-2 h2 {
+  color: #E74C3C; /* Vibrant red for emphasis */
+}
+
+
+/* Animation for Testimonials */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.testimo {
+  animation: slideIn 0.5s ease-out;
+}
+
+.choose {
+  background-color: #f9f9f9; /* Light background for contrast */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.choose-header h5 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.choose-header strong {
+  font-size: 18px;
+  color: #555;
+}
+
+.choose-items {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  margin-top: 20px;
+}
+
+.choose-item {
+  background-color: #ffffff; /* White background for each item */
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex: 1 1 200px; /* Allow flexibility for responsive design */
+  max-width: 220px; /* Limit max width */
+}
+
+.choose-icon1 {
+  color: #1d1d81; /* Change icon color */
+  font-size: 40px; /* Increase icon size */
+  margin-bottom: 10px; /* Space below the icon */
+}
+.choose-icon2 {
+  color: red; /* Change icon color */
+  font-size: 40px; /* Increase icon size */
+  margin-bottom: 10px; /* Space below the icon */
+}
+.choose-icon3 {
+  color: green; /* Change icon color */
+  font-size: 40px; /* Increase icon size */
+  margin-bottom: 10px; /* Space below the icon */
+}
+.choose-icon4 {
+  color: black; /* Change icon color */
+  font-size: 40px; /* Increase icon size */
+  margin-bottom: 10px; /* Space below the icon */
+}
+
+.choose-item h4 {
+  font-size: 20px;
+  color: #1d1d81;
+  margin: 10px 0;
+}
+
+.choose-item p {
+  font-size: 14px;
+  color: #777;
+}
+.case-studies {
+  background-color: #f8f9fa; /* Light background for contrast */
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  
+}
+
+.case-studies-0 {
+  margin-bottom: 30px;
+}
+
+.case-studies-0 h5 {
+  font-size: 24px;
+  color: #343a40; /* Darker color for the heading */
+  margin-bottom: 5px;
+}
+
+.case-studies-0 strong {
+  font-size: 18px;
+  color: #6c757d; /* Subtle gray for the subtitle */
+}
+
+.case-photos {
+  display: flex;
+  flex-wrap: wrap; /* Wrap items for responsiveness */
+  justify-content: center;
+  gap: 20px; /* Space between items */
+}
+
+.photos {
+  background-color: #ffffff; /* White background for the cards */
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Rounded corners for images */
+  text-align: center;
+  width: 180px; /* Adjusted width for smaller cards */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+}
+
+.photos:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+.user-phot0 {
+  width: 100%; /* Full width of the container */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 120px; /* Limit height for smaller images */
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+h5 {
+  font-size: 18px; /* Adjusted font size */
+  color: #007bff; /* Brand color for titles */
+  margin: 10px 0 5px; /* Spacing for title */
+}
+
+p {
+  font-size: 14px; /* Adjusted font size */
+  color: #495057; /* Subtle color for descriptions */
+  margin: 0 0 15px; /* Space below descriptions */
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensures the modal is on top */
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 50%;
+  max-height: 80%;
+}
+
+.modal-image {
+  width: 50%; /* Responsive width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+}
+.works {
+  background-color: #f7f9fc; /* Light background for the container */
+  padding: 20px; /* Spacing inside the container */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Center items vertically */
+}
+
+.works h4 {
+  color: #1d1d81; /* Text color */
+  font-size: 20px; /* Font size */
+  margin: 0; /* Remove default margin */
+  font-weight: bold; /* Make the text bold */
+  display: flex; /* Make h4 a flex container */
+  align-items: center; /* Center align the text and icon */
+}
+
+.choose-icon2 {
+  color: #1d1d81; /* Icon color */
+  margin-left: 10px; /* Space between text and icon */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.choose-icon2:hover {
+  color: #ff6600; /* Change color on hover for effect */
+}
+.quotes {
+  background-color: #e3f2fd; /* Light background for the entire section */
+  padding: 40px; /* Spacing inside the section */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center; /* Center align text */
+  margin: 30px 0; /* Spacing above and below */
+}
+
+.quotes-0 h5 {
+  font-size: 24px; /* Size of the testimonial title */
+  color: #1d1d81; /* Title color */
+  margin-bottom: 10px; /* Space below title */
+}
+
+.quotes-0 h2 {
+  font-size: 20px; /* Size of the testimonial text */
+  color: #333; /* Text color */
+  font-style: italic; /* Italic style for emphasis */
+  margin: 20px 0; /* Space above and below */
+  padding: 0 20px; /* Horizontal padding */
+}
+
+.testimonial-3 {
+  display: flex; /* Flexbox for alignment */
+  justify-content: center; /* Center the image */
+  margin: 20px 0; /* Space above and below */
+}
+
+.user-photo-0 {
+  width: 100px; /* Size of the user photo */
+  height: 100px; /* Size of the user photo */
+  border-radius: 50%; /* Circular shape */
+  border: 3px solid #1d1d81; /* Border around photo */
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+strong {
+  display: block; /* Makes the strong element take a new line */
+  font-size: 18px; /* Size for the name */
+  color: #1d1d81; /* Name color */
+  margin: 10px 0; /* Space above and below */
+}
+
+p {
+  font-size: 16px; /* Size for the role */
+  color: #777; /* Role color */
+  margin: 0; /* Remove default margin */
+}
+.container {
+  font-family: Arial, sans-serif;
+  color: #333;
+
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #1d1d81;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.navbarr ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.navbarr li {
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+.main-content {
+  text-align: center;
+  margin: 30px 0;
+  font-size: 1.2em;
+}
+
+.footer {
+  background-color: #f0f0f0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 10px;
+}
+
+.footer-section h5 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin: 10px 0;
+}
+.icons1 {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center the icons horizontally */
+  align-items: center; /* Center the icons vertically */
+  margin: 20px 0; /* Space around the icons */
+}
+
+.icon {
+  font-size: 30px; /* Increase icon size */
+  margin: 0 15px; /* Space between icons */
+  color: #333; /* Default icon color */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and scale */
+}
+
+.icon:hover {
+  color: #1d1d81; /* Change color on hover */
+  transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+.icon-1:hover{
+  color: #1d8145; /* Change color on hover */
+  transform: scale(1.1); 
+  font-size: 30px;
+  
+}
+.icon-1{
+  font-size: 30px; /* Increase icon size */
+  margin: 0 15px; /* Space between icons */
+  color: #333; /* Default icon color */
+  transition: color 0.3s ease, transform 0.3s ease; 
+}
